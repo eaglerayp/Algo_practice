@@ -1,27 +1,49 @@
 
 public class balancetree {
-	TreeNode root;
+	static TreeNode root;
 	
-	public 	void create (int[] input){
+	public static void create (int[] input){
 		for(int i=0;i<input.length;i++){
-			this.insert(root,input[i]);
+			root=insert(root,input[i]);
 		}
+		traverse();
 	}
-	private void insert (TreeNode subroot,int element){
+	private static TreeNode insert(TreeNode subroot,int element){
 		//insert part
 		if (subroot==null){  //root case
 			subroot=new TreeNode(element,false,null,null); 
+			return subroot;
 		}else{
 			if(subroot.data>element){ // left case
-				insert(subroot.left,element);
+				subroot.left=insert(subroot.left,element);
 			}else if(subroot.data<element){ //right case
-				insert(subroot.right,element);
+				subroot.right=insert(subroot.right,element);
 			}else{//duplicate case
 				//do nothing or error
 				System.out.println("duplicate element:"+element);
+				return null;
 			}
+			//check black or red part 
+			
+			
+			return subroot;
 		}
 		
-		//check black or red part 
+		
+	}
+	
+	public static void traverse(){
+		printnode(root);
+	}
+	private static void printnode(TreeNode node){
+		if(node!=null){
+			if(node.left!=null){
+				printnode(node.left);
+			}
+			System.out.println(node.data);
+			if(node.right!=null){
+				printnode(node.right);
+			}
+		}
 	}
 }
