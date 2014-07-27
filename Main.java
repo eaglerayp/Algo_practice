@@ -6,6 +6,7 @@ public class Main
 
    public static void main(String [] args) throws IOException  //test find duplicate  try bubble sortu06
    {
+	   int [] inputsortsame ={1,2,2,3,3,3,3,3,3,4,5,5,6};  
 	   int [] inputnotsort={1,6,3,5,7,9,8};//
 	   balancetree.create(inputnotsort);
 	   System.out.println(balancetree.root.data);
@@ -21,6 +22,9 @@ public class Main
 	   for(int i=0;i<dup.length;i++){
 		   System.out.println("DUP"+dup[i]);
 	   }
+	   
+	   int longestlength=plateau.findlongestlength(inputsortsame);
+	   System.out.println("sortsamearray's longest plateau:"+longestlength);
 	//   System.out.println(dup);
    }
 
