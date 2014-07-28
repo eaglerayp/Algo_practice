@@ -38,12 +38,14 @@ public class countingsort {
 		   }
 		   max++;
 		   int[] count=new int[max];
-		   for(int i=0;i<input.length;i++){  // can find duplicate element if  "count>1"
+		   for(int i=0;i<input.length;i++){
 			   count[input[i]]++;
-			   if(count[input[i]]>1){
-				   result.add(input[i]);
-			   }
 		   }
+           for(int i=0;i<count.length;i++){// can find duplicate element if  "count>1"
+               if(count[i]>1){
+                   result.add(i);
+               }
+           }
 		   int[]dups=new int[result.size()];
 		   for(int i=0;i<result.size();i++){
 			   dups[i]=result.get(i);
