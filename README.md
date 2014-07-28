@@ -1,14 +1,14 @@
-testfunction repo
+testfunction repo introduction
 ============
 
-###testfunction contain my practicing project about DS and program efficiency
+testfunction contain my practicing project about DS and program efficiency
 
 ###basic DS and algorithm
-#####counting sort
-#####binary search tree
-#####red-black tree (incomplete)
+*counting sort (https://github.com/eaglerayp/testfunction/blob/master/countingsort.java)
+*binary search tree(https://github.com/eaglerayp/testfunction/blob/master/balancetree.java)
+*red-black tree (https://github.com/eaglerayp/testfunction/blob/master/balancetree.java)
 
 ###classic problem
-#####plateau
+*plateau(https://github.com/eaglerayp/testfunction/blob/master/plateau.java)
 
 
