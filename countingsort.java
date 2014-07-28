@@ -2,7 +2,7 @@ import java.util.ArrayList;
 
 
 public class countingsort {
-	   public static int[] countingsort(int[] input){
+	   public static int[] sort(int[] input){
 		   int max=0;
 		   int[] result=new int[input.length];
 		   for(int i=0;i<input.length;i++){  //find max

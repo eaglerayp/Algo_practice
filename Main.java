@@ -10,7 +10,7 @@ public class Main
 	   int [] inputnotsort={1,6,3,5,7,9,8};//
 	   balancetree.create(inputnotsort);
 	   System.out.println("now ROOT:"+balancetree.root.data);
-	   int[]count=countingsort.countingsort(inputnotsort);
+	   int[]count=countingsort.sort(inputnotsort);
 	   System.out.print("counting-sort array:");
 	   for(int i=0;i<count.length;i++){
 		   int x=count[i];
