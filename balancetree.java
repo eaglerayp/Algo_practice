@@ -33,14 +33,16 @@ public class balancetree {
 	}
 	
 	public static void traverse(){
+        System.out.print("tree in-order traversal:");
 		printnode(root);
+        System.out.println();
 	}
 	private static void printnode(TreeNode node){
 		if(node!=null){
 			if(node.left!=null){
 				printnode(node.left);
 			}
-			System.out.println(node.data);
+			System.out.print(node.data+" ");
 			if(node.right!=null){
 				printnode(node.right);
 			}
