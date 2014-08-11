@@ -12,6 +12,8 @@ public class Main
        int [] g={2,3,4,7,8};
        int gt= GT_count.findGTcount(f,g);
        System.out.println("GT of f,g:"+gt);
+       int EQ= EQ_count.findEQcount(f,g);
+       System.out.println("EQ of f,g:"+EQ);
 	   balancetree.create(inputnotsort);
 	   System.out.println("now ROOT:"+balancetree.root.data);
 	   int[]count=countingsort.sort(inputnotsort);
