@@ -10,5 +10,5 @@ testfunction contain my practicing project about DS and program efficiency
 
 ###classic problem
 * [plateau](https://github.com/eaglerayp/testfunction/blob/master/plateau.java)
-
+* [dominance count(GT)](https://github.com/eaglerayp/testfunction/blob/master/GT_count.java)
 

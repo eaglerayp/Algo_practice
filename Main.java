@@ -8,6 +8,10 @@ public class Main
    {
 	   int [] inputsortsame ={1,2,2,3,3,3,3,3,3,4,5,5,6};  //example input
 	   int [] inputnotsort={1,6,3,5,7,9,8};//
+       int [] f= {1,3,5,7,9};
+       int [] g={2,3,4,7,8};
+       int gt= GT_count.findGTcount(f,g);
+       System.out.println("GT of f,g:"+gt);
 	   balancetree.create(inputnotsort);
 	   System.out.println("now ROOT:"+balancetree.root.data);
 	   int[]count=countingsort.sort(inputnotsort);
