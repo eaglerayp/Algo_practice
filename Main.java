@@ -10,10 +10,13 @@ public class Main
 	   int [] inputnotsort={1,6,3,5,7,9,8};//
        int [] f= {1,3,5,7,9};
        int [] g={2,3,4,7,8};
+       int [] z={-10,13};
        int gt= GT_count.findGTcount(f,g);
        System.out.println("GT of f,g:"+gt);
        int EQ= EQ_count.findEQcount(f,g);
        System.out.println("EQ of f,g:"+EQ);
+       int minidist= mindist.findmindistance(f,z);
+       System.out.println("min distance of f,z:"+minidist);
 	   balancetree.create(inputnotsort);
 	   System.out.println("now ROOT:"+balancetree.root.data);
 	   int[]count=countingsort.sort(inputnotsort);
