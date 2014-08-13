@@ -20,6 +20,12 @@ public class Main
        System.out.println("min distance of f,z:"+minidist);
        int headtailEQ= headtail.findEQheadtail(y);
        System.out.println("count of equal pre/postfix sum of y:"+headtailEQ);
+       int []armstrong=Armstrong.findallarms();
+       System.out.print("Armstrong value:");
+       for (int i:armstrong){
+           System.out.print(" "+i);
+       }
+       System.out.println();
 	   /*balancetree.create(inputnotsort);
 	   System.out.println("now ROOT:"+balancetree.root.data);*/
 	   int[]count=countingsort.sort(inputnotsort);

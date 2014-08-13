@@ -14,3 +14,6 @@ testfunction contain my practicing project about DS and program efficiency
 * [coincidence count(EQ)](https://github.com/eaglerayp/testfunction/blob/master/EQ_count.java)
 * [min distance(mindist)](https://github.com/eaglerayp/testfunction/blob/master/mindist.java)
 * [equal pre/postfix sum(headtail)](https://github.com/eaglerayp/testfunction/blob/master/headtail.java)
+
+###numeral problem
+* [Armstrong number] (https://github.com/eaglerayp/testfunction/blob/master/Armstrong.java)
