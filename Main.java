@@ -26,6 +26,12 @@ public class Main
            System.out.print(" "+i);
        }
        System.out.println();
+       int []primes=Prime.findNprimes(20);
+       System.out.print("Prime value:");
+       for (int i:primes){
+           System.out.print(" "+i);
+       }
+       System.out.println();
 	   /*balancetree.create(inputnotsort);
 	   System.out.println("now ROOT:"+balancetree.root.data);*/
 	   int[]count=countingsort.sort(inputnotsort);
