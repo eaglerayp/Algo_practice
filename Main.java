@@ -26,8 +26,15 @@ public class Main
            System.out.print(" "+i);
        }
        System.out.println();
-       int []primes=Prime.findNprimes(20);
-       System.out.print("Prime value:");
+       int []Nprimes=Prime.findNprimes(20);
+       System.out.print("first N(20) Prime value:");
+       for (int i:Nprimes){
+           System.out.print(" "+i);
+       }
+       System.out.println();
+       
+       int []primes=sieve.findprimes(120);
+       System.out.print("Prime value < N(120):");
        for (int i:primes){
            System.out.print(" "+i);
        }

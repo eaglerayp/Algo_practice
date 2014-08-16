@@ -18,6 +18,7 @@ testfunction contain my practicing project about DS and program efficiency
 ###numeral problem
 * [Armstrong number] (https://github.com/eaglerayp/testfunction/blob/master/Armstrong.java)
 * [Primes] (https://github.com/eaglerayp/testfunction/blob/master/Prime.java)
+* [Primes-Sieve of Eratosthenes] (https://github.com/eaglerayp/testfunction/blob/master/Sieve.java)
 
 ###basic Java file read uniqueid
 * [readid] (https://github.com/eaglerayp/testfunction/blob/master/readid.java)
