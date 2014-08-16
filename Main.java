@@ -33,7 +33,7 @@ public class Main
        }
        System.out.println();
        
-       int []primes=sieve.findprimes(120);
+       int []primes=Sieve.findprimes(120);
        System.out.print("Prime value < N(120):");
        for (int i:primes){
            System.out.print(" "+i);
