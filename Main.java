@@ -32,10 +32,22 @@ public class Main
            System.out.print(" "+i);
        }
        System.out.println();
-       
+       double startTime,endTime,totTime;
+       startTime = System.currentTimeMillis();
        int []primes=Sieve.findprimes(120);
+       totTime = System.currentTimeMillis()-startTime;
+       System.out.print("Sieve:"+totTime);
+       startTime = System.currentTimeMillis();
+       int []lprimes=linearSieve.findprimes(120);
+       totTime = System.currentTimeMillis()-startTime;
+       System.out.print("LSieve:"+totTime);
        System.out.print("Prime value < N(120):");
        for (int i:primes){
+           System.out.print(" "+i);
+       }
+       System.out.println();
+       System.out.print("Linear Prime value < N(120):");
+       for (int i:lprimes){
            System.out.print(" "+i);
        }
        System.out.println();
