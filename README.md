@@ -20,6 +20,7 @@ testfunction contain my practicing project about DS and program efficiency
 * [Primes] (https://github.com/eaglerayp/testfunction/blob/master/Prime.java)
 * [Primes-Sieve of Eratosthenes] (https://github.com/eaglerayp/testfunction/blob/master/Sieve.java)
 * [Primes-Linear Sieve ] (https://github.com/eaglerayp/testfunction/blob/master/linearSieve.java)
+* [factor ] (https://github.com/eaglerayp/testfunction/blob/master/factor.java)
 
 ###basic Java file read uniqueid
 * [readid] (https://github.com/eaglerayp/testfunction/blob/master/readid.java)

@@ -1,4 +1,5 @@
 import java.io.IOException;
+import java.util.HashMap;
 
 
 public class Main
@@ -49,6 +50,13 @@ public class Main
        System.out.print("Linear Prime value < N(120):");
        for (int i:lprimes){
            System.out.print(" "+i);
+       }
+       System.out.println();
+
+       HashMap<Integer,Integer> facs=factor.factors(2150);
+       System.out.print("factors:"+99+"=");
+       for(int key:facs.keySet()){
+           System.out.print(key+"^"+facs.get(key)+" * ");
        }
        System.out.println();
 	   /*balancetree.create(inputnotsort);
