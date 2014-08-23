@@ -7,6 +7,7 @@ testfunction contain my practicing project about DS and program efficiency
 * [counting sort] (https://github.com/eaglerayp/testfunction/blob/master/countingsort.java)
 * [binary search tree] (https://github.com/eaglerayp/testfunction/blob/master/balancetree.java)
 * [red-black tree(incomplete)] (https://github.com/eaglerayp/testfunction/blob/master/balancetree.java)
+* [binary compute] (https://github.com/eaglerayp/testfunction/blob/master/binary_compute.java)  include getMax(a,b) , sum if n>X , isEven
 
 ###classic problem
 * [plateau](https://github.com/eaglerayp/testfunction/blob/master/plateau.java)
