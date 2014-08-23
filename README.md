@@ -23,6 +23,7 @@ testfunction contain my practicing project about DS and program efficiency
 * [Primes-Linear Sieve ] (https://github.com/eaglerayp/testfunction/blob/master/linearSieve.java)
 * [factor ] (https://github.com/eaglerayp/testfunction/blob/master/factor.java)
 * [R_power ] (https://github.com/eaglerayp/testfunction/blob/master/R_power.java)
+* [I_power ] (https://github.com/eaglerayp/testfunction/blob/master/I_power.java)
 
 ###basic Java file read uniqueid
 * [readid] (https://github.com/eaglerayp/testfunction/blob/master/readid.java)

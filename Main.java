@@ -60,7 +60,9 @@ public class Main
        }
        System.out.println();
        int power= R_power.power(2,9);
-       System.out.println("2^10:"+power);
+       int Ipower= I_power.power(2,9);
+       System.out.println("2^9:"+power);
+       System.out.println("2^9 Ipower:"+Ipower);
 	   /*balancetree.create(inputnotsort);
 	   System.out.println("now ROOT:"+balancetree.root.data);*/
 	   int[]count=countingsort.sort(inputnotsort);
