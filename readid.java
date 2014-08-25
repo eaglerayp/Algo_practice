@@ -10,6 +10,9 @@ import java.util.Set;
 
 public class readid {
     public static void main(String [] args) throws IOException {
+        String a = ".....?";
+        a=a.substring(0,a.length()-2);
+        System.out.print(a);
         double startTime,endTime,totTime;
         startTime = System.currentTimeMillis();
         File input=new File("D:\\phantomjs\\code\\朱學恆relation.txt");

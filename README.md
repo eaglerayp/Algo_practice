@@ -24,3 +24,6 @@ testfunction contain my practicing project about DS and program efficiency
 
 ###basic Java file read uniqueid
 * [readid] (https://github.com/eaglerayp/testfunction/blob/master/readid.java)
+
+###Java regex example
+* [Regex] (https://github.com/eaglerayp/testfunction/blob/master/Regex.java)
