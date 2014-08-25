@@ -7,6 +7,7 @@ testfunction contain my practicing project about DS and program efficiency
 * [counting sort] (https://github.com/eaglerayp/testfunction/blob/master/countingsort.java)
 * [binary search tree] (https://github.com/eaglerayp/testfunction/blob/master/balancetree.java)
 * [red-black tree(incomplete)] (https://github.com/eaglerayp/testfunction/blob/master/balancetree.java)
+* [binary compute] (https://github.com/eaglerayp/testfunction/blob/master/binary_compute.java)  include getMax(a,b) , sum if n>X , isEven
 
 ###classic problem
 * [plateau](https://github.com/eaglerayp/testfunction/blob/master/plateau.java)
@@ -21,6 +22,8 @@ testfunction contain my practicing project about DS and program efficiency
 * [Primes-Sieve of Eratosthenes] (https://github.com/eaglerayp/testfunction/blob/master/Sieve.java)
 * [Primes-Linear Sieve ] (https://github.com/eaglerayp/testfunction/blob/master/linearSieve.java)
 * [factor ] (https://github.com/eaglerayp/testfunction/blob/master/factor.java)
+* [R_power ] (https://github.com/eaglerayp/testfunction/blob/master/R_power.java)
+* [I_power ] (https://github.com/eaglerayp/testfunction/blob/master/I_power.java)
 
 ###basic Java file read uniqueid
 * [readid] (https://github.com/eaglerayp/testfunction/blob/master/readid.java)
