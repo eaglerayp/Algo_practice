@@ -17,14 +17,14 @@ testfunction contain my practicing project about DS and program efficiency
 * [equal pre/postfix sum(headtail)](https://github.com/eaglerayp/testfunction/blob/master/headtail.java)
 
 ###numeral problem
-* [Armstrong number] (https://github.com/eaglerayp/testfunction/blob/master/Armstrong.java)
-* [Primes] (https://github.com/eaglerayp/testfunction/blob/master/Prime.java)
-* [Primes-Sieve of Eratosthenes] (https://github.com/eaglerayp/testfunction/blob/master/Sieve.java)
-* [Primes-Linear Sieve ] (https://github.com/eaglerayp/testfunction/blob/master/linearSieve.java)
-* [factor ] (https://github.com/eaglerayp/testfunction/blob/master/factor.java)
-* [R_power ] (https://github.com/eaglerayp/testfunction/blob/master/R_power.java)
-* [I_power ] (https://github.com/eaglerayp/testfunction/blob/master/I_power.java)
-
+* [Armstrong number] (https://github.com/eaglerayp/testfunction/blob/master/Armstrong.java) 找出armstrong數 三位數恰好等於三個數字的三次方和
+* [Primes] (https://github.com/eaglerayp/testfunction/blob/master/Prime.java)求n個質數
+* [Primes-Sieve of Eratosthenes] (https://github.com/eaglerayp/testfunction/blob/master/Sieve.java)  給定數字範圍內篩出所有質數
+* [Primes-Linear Sieve ] (https://github.com/eaglerayp/testfunction/blob/master/linearSieve.java) 線性篩質數 (所有數只會被篩一次)
+* [factor ] (https://github.com/eaglerayp/testfunction/blob/master/factor.java) 因數分解
+* [R_power ] (https://github.com/eaglerayp/testfunction/blob/master/R_power.java) m的n次方數 Divide and conquer解 
+* [I_power ] (https://github.com/eaglerayp/testfunction/blob/master/I_power.java) m的n次方數 非遞迴 將n視為2進位解 
+* [Fib_MT](https://github.com/eaglerayp/testfunction/blob/master/Fib_MT.java) fibonacci數列快速矩陣解
 ###basic Java file read uniqueid
 * [readid] (https://github.com/eaglerayp/testfunction/blob/master/readid.java)
 
