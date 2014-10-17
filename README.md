@@ -25,6 +25,7 @@ testfunction contain my practicing project about DS and program efficiency
 * [R_power ] (https://github.com/eaglerayp/testfunction/blob/master/R_power.java) m的n次方數 Divide and conquer解 
 * [I_power ] (https://github.com/eaglerayp/testfunction/blob/master/I_power.java) m的n次方數 非遞迴 將n視為2進位解 
 * [Fib_MT](https://github.com/eaglerayp/testfunction/blob/master/Fib_MT.java) fibonacci數列快速矩陣解
+* [CNR_ADD](https://github.com/eaglerayp/testfunction/blob/master/CNR_ADD.java) array最少次加法解Cn取r的組合問題
 ###basic Java file read uniqueid
 * [readid] (https://github.com/eaglerayp/testfunction/blob/master/readid.java)
 

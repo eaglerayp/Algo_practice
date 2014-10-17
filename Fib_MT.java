@@ -30,14 +30,13 @@ public class Fib_MT {
     }
     public static int matrix_fib(int n){
         int []matrix={1,1,1,0};
-        int []fib_ini={1,1};
         if(n<=2){
             return 1;
         }else{
             matrix=two_dimension_matrix_square(matrix,matrix,n-2);
             return matrix[0]+matrix[1];
         }
-    }
+}
     public static void main(String [] args) {
         System.out.println(matrix_fib(1024));
     }
