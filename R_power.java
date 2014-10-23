@@ -2,7 +2,7 @@
  * Created by eagle on 2014/8/23.
  */
 public class R_power {
-    public static int power(int n,int square){
+    public static long power(long n,int square){
         if(square==1){
             return n;
         }
