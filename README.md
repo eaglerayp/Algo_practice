@@ -28,6 +28,7 @@ testfunction contain my practicing project about DS and program efficiency
 * [CNR_ADD](https://github.com/eaglerayp/testfunction/blob/master/CNR_ADD.java) array最少次加法解Cn取r的組合問題
 * [CNR_LOG](https://github.com/eaglerayp/testfunction/blob/master/CNR_LOG.java) Cn取r的組合問題logn解法
 * [FACTLOG2](https://github.com/eaglerayp/testfunction/blob/master/FACTLOG2.java) logn次乘法解factorial
+* [FACTLOG](https://github.com/eaglerayp/testfunction/blob/master/FACTLOG.java) logn次乘法解factorial, factlog2精簡版  節省重複運算c(n)(n/2)...
 ###basic Java file read uniqueid
 * [readid] (https://github.com/eaglerayp/testfunction/blob/master/readid.java)
 

@@ -6,12 +6,12 @@ public class R_power {
         if(square==1){
             return n;
         }
-        else if (square==2){
-            return n*n;
+        else if ((square&0x01)!=0){
+            return n*power(n,square-1);
         }
         else{
-            int divide=square/2;
-            return power(n,divide)*power(n,square-divide);
+            long temp=power(n,square>>1);
+            return temp*temp;
         }
     }
 }

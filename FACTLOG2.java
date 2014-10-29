@@ -18,6 +18,10 @@ public class FACTLOG2 {
         }
     }
     public static void main(String [] args)    {
-        System.out.println(factlog2(10));
+        double starttime,endtime;
+        starttime=System.currentTimeMillis();
+         System.out.println(factlog2(10));
+        endtime=System.currentTimeMillis()-starttime;
+        System.out.println(endtime/1000);
     }
 }
