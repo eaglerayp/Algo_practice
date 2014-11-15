@@ -31,6 +31,9 @@ testfunction contain my practicing project about DS and program efficiency
 * [FACTLOG](https://github.com/eaglerayp/testfunction/blob/master/FACTLOG.java) logn次乘法解factorial, factlog2精簡版  節省重複運算c(n)(n/2)...
 * [givensum](https://github.com/eaglerayp/testfunction/blob/master/givensum.java) 找出連續數列  之和=給定數字 
 
+###Set, Combination and Permutation problem
+* [direct](https://github.com/eaglerayp/testfunction/blob/master/direct.java) 找出連續數字的所有集合
+
 ###basic Java file read uniqueid
 * [readid] (https://github.com/eaglerayp/testfunction/blob/master/readid.java)
 
