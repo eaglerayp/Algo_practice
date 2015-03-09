@@ -39,3 +39,10 @@ testfunction contain my practicing project about DS and program efficiency
 
 ###Java regex example
 * [Regex] (https://github.com/eaglerayp/testfunction/blob/master/Regex.java)
+
+### leetcode oj solution
+* [Solution] (https://github.com/eaglerayp/testfunction/blob/master/Solution.java)
+   including singleNumber,firstMissingPositive
+   problem can be found in https://leetcode.com/problemset/algorithms/
+
+
