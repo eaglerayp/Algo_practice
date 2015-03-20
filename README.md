@@ -42,7 +42,10 @@ testfunction contain my practicing project about DS and program efficiency
 
 ### leetcode oj solution
 * [Solution] (https://github.com/eaglerayp/testfunction/blob/master/Solution.java)
-   including singleNumber,firstMissingPositive
+   including singleNumber,firstMissingPositive,Two Sum,	Number of 1 Bits,Reverse Bits,Rotate Array
+* [LRUCache] (https://github.com/eaglerayp/testfunction/blob/master/LRUCache.java)
+   LRUCache problem have 1.HashMap and double linked list  and 2. linkedHashMap  two solutions. 
+   
    problem can be found in https://leetcode.com/problemset/algorithms/
 
 
