@@ -192,15 +192,58 @@ public class Solution {
         double answer=0;
         return answer;
     }
+
+    public static int maximumGap(int[] num) {
+        class bucket{
+            int max;
+            int min;
+            public bucket(int max,int min){
+                this.max=max;
+                this.min=min;
+            }
+        }
+        int length=num.length;
+        if(length<2){
+            return 0;
+        }
+        else{
+            int min=num[0];
+            int max=num[0];
+            for(int i=1;i<length;i++){
+                if(num[i]>max) {
+                    max = num[i];
+                }
+                if(num[i]<min){
+                    min=num[i];
+                }
+            }
+            int distance=(max-min+1)/length+1;
+            bucket[] count=new bucket[length];
+            for(int i=0;i<length;i++){
+                int buckets=(num[i]-min)/distance;
+                if(count[buckets]==null){
+                    count[buckets]=new bucket(num[i],num[i]);
+                }else {
+                    count[buckets].max = (count[buckets].max > num[i]) ? count[buckets].max : num[i];
+                    count[buckets].min = (count[buckets].min < num[i]) ? count[buckets].min : num[i];
+                }
+            }
+            int maxgap=0;
+            int last_max=count[0].max;
+            for(int i=1;i<count.length;i++){
+                if(count[i]==null) continue;
+                int diff=count[i].min-last_max;
+                maxgap=(maxgap>diff)?maxgap:diff;
+                last_max=count[i].max;
+            }
+            return maxgap;
+        }
+    }
     public static void main(String [] args)    {
        // int singletest[]={2,2,3,6,6,5,5,7,7};
         //int firstMissingPositivetest[]={1};
-        LRUCache a=new LRUCache(2);
-
-        a.set(2,2);
-        a.set(3,3);
-        a.get(2);
-        a.set(4,4);
+        int[] a={1,1,1,1};
+        System.out.println(maximumGap(a));
        //rotate(a,1);
       // System.out.println(hammingWeight(11));
     }
