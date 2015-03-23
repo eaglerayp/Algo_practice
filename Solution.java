@@ -239,6 +239,83 @@ public class Solution {
             return maxgap;
         }
     }
+     public class ListNode {
+         int val;
+         ListNode next;
+
+         public ListNode(int x) {
+             val = x;
+             next = null;
+         }
+     }
+    public ListNode getIntersectionNode(ListNode headA, ListNode headB) {
+        if(headA==null||headB==null){
+            return null;
+        }else {
+            int Alength=0;
+            int Blength=0;
+            ListNode Atemp=headA;
+            ListNode Btemp=headB;
+            while(Atemp!=null){
+                Atemp=Atemp.next;
+                Alength++;
+            }
+            while(Btemp!=null){
+                Btemp=Btemp.next;
+                Blength++;
+            }
+            int diff=Alength-Blength;
+            Atemp=headA;
+            Btemp=headB;
+            if(diff>0){
+                while(diff>0){
+                    Atemp=Atemp.next;
+                    diff--;
+                }
+            }else if(diff<0){
+                while(diff<0){
+                    Btemp=Btemp.next;
+                    diff++;
+                }
+            }
+            while(Atemp!=null&&Atemp.val!=Btemp.val){
+                Atemp=Atemp.next;
+                Btemp=Btemp.next;
+            }
+            return Atemp;
+        }
+    }
+
+     /* Solution 1  reverse order
+         if(headA!=null&&headB!=null) {
+            reverseList(headA);
+            reverseList(headB);
+            ListNode lastsame = null;
+            ListNode Atemp = headA;
+            ListNode Btemp = headB;
+            while (Atemp!=null&&Btemp!=null&&Atemp.val == Btemp.val) {
+                lastsame = Atemp;
+                Atemp = Atemp.next;
+                Btemp = Btemp.next;
+            }
+            reverseList(headA);
+            reverseList(headB);
+            return lastsame;
+        }else{
+            return null;
+        }
+    }
+    public void reverseList(ListNode head){
+        ListNode cur=(head!=null)?head.next:null;
+        ListNode prev=head;
+        ListNode next;
+        while(cur!=null){
+            next=cur.next;
+            cur.next=prev;
+            prev=cur;
+            cur=next;
+        }
+    }*/
     public static void main(String [] args)    {
        // int singletest[]={2,2,3,6,6,5,5,7,7};
         //int firstMissingPositivetest[]={1};
