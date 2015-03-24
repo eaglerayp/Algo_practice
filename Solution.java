@@ -316,11 +316,73 @@ public class Solution {
             cur=next;
         }
     }*/
+     public class TreeNode {
+          int val;
+          TreeNode left;
+          TreeNode right;
+          TreeNode(int x) { val = x; }
+      }
+    public int max=Integer.MIN_VALUE;
+    public int DFSmaxPathSum(TreeNode root) {
+        if(root==null){
+            return 0;
+        }else{
+            int left=DFSmaxPathSum(root.left);
+            int right=DFSmaxPathSum(root.right);
+            left=(left<0)?0:left;
+            right=(right<0)?0:right;
+            // check the subtree solution when DFS!!!!!  using global valuable
+            int sum=left+right+root.val;
+            max=(sum>max)?sum:max;
+
+            int dfs=(left>right)?left:right;
+            return dfs+root.val;
+        }
+    }
+     public int maxPathSum(TreeNode root) {
+         DFSmaxPathSum(root);
+         return max;
+
+         /*  first version solution
+        if(root==null){
+            return 0;
+        }else {
+            int leftmax=maxPathSum(root.left);
+            int rightmax=maxPathSum(root.right);
+            int right=DFSTreePathSum(root.right);
+            int left=DFSTreePathSum(root.left);
+            int sum=right+left+root.val;
+            if(leftmax>rightmax){
+                if(leftmax>sum){
+                    return leftmax;
+                }else{
+                    return sum;
+                }
+            }else{
+                if(rightmax>sum){
+                    return rightmax;
+                }else{
+                    return sum;
+                }
+            }
+        }*/
+     }
+    public int DFSTreePathSum(TreeNode root) {
+        if(root==null){
+            return 0;
+        }else {
+            int left=DFSTreePathSum(root.left);
+            int right=DFSTreePathSum(root.right);
+            int max_subtree=(left>right)?left:right;
+            return max_subtree+root.val;
+        }
+    }
     public static void main(String [] args)    {
        // int singletest[]={2,2,3,6,6,5,5,7,7};
         //int firstMissingPositivetest[]={1};
         int[] a={1,1,1,1};
-        System.out.println(maximumGap(a));
+        System.out.println(Integer.MIN_VALUE);
+        System.out.println(-Integer.MAX_VALUE);
        //rotate(a,1);
       // System.out.println(hammingWeight(11));
     }
