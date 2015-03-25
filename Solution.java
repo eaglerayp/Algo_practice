@@ -377,12 +377,55 @@ public class Solution {
             return max_subtree+root.val;
         }
     }
+    public void reorderList(ListNode head) {
+        int length=0;
+        ListNode cur=head;
+        while(cur!=null){
+            length++;
+            cur=cur.next;
+        }
+        int swap_count=(length-1)/2;
+        if(swap_count>0) {
+            ListNode[] prev = new ListNode[swap_count];
+            ListNode[] from = new ListNode[swap_count];
+            cur = head;
+            int count = 0;
+            while (count < swap_count) {
+                prev[count] = cur;
+                cur = cur.next;
+                count++;
+            }
+            int from_start = length - swap_count;
+            while (count < from_start - 1) {
+                cur = cur.next;
+                count++;
+            }
+            //  slip the link
+            ListNode temp = cur;
+            cur = cur.next;
+            temp.next = null;
+            count = swap_count - 1;
+            while (count >= 0) {
+                from[count] = cur;
+                cur = cur.next;
+                count--;
+            }
+            for (int i = 0; i < swap_count; i++) {
+                reorderInsert(prev[i], from[i]);
+            }
+        }
+    }
+    public void reorderInsert(ListNode prev,ListNode next) {
+        next.next=prev.next;
+        prev.next=next;
+    }
     public static void main(String [] args)    {
        // int singletest[]={2,2,3,6,6,5,5,7,7};
         //int firstMissingPositivetest[]={1};
         int[] a={1,1,1,1};
         System.out.println(Integer.MIN_VALUE);
         System.out.println(-Integer.MAX_VALUE);
+        System.out.println((2-1)/2);
        //rotate(a,1);
       // System.out.println(hammingWeight(11));
     }
