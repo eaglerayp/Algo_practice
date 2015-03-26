@@ -419,6 +419,17 @@ public class Solution {
         next.next=prev.next;
         prev.next=next;
     }
+    public int maxDepth(TreeNode root) {
+        if(root==null){
+            return 0;
+        }else{
+            int left=maxDepth(root.left);
+            int right=maxDepth(root.right);
+            int height=(left>right)?left:right;
+            return height+1;
+        }
+
+    }
     public static void main(String [] args)    {
        // int singletest[]={2,2,3,6,6,5,5,7,7};
         //int firstMissingPositivetest[]={1};
