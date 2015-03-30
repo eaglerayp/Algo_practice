@@ -1,4 +1,5 @@
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.Hashtable;
 
 /**
@@ -430,6 +431,42 @@ public class Solution {
         }
 
     }
+    public HashMap<Integer,Integer> adding=new HashMap<Integer, Integer>();
+    public int majorityElement(int[] num) {
+        //moore voting algorithm
+        int now=0;
+        int count=0;
+        for(int i:num){
+            if(count==0){
+                now=i;
+                count++;
+            }else{
+                if(now==i){
+                    count++;
+                }else{
+                    count--;
+                }
+            }
+        }
+        return now;
+
+       /*   first accepted solution
+       int threshold=num.length/2;
+        if(threshold==0){
+            return num[0];
+        }
+        for(int i:num){
+            if(adding.keySet().contains(i)){
+                int fre=adding.get(i);
+                if(fre+1>threshold) return i;
+                adding.put(i,fre+1);
+            }else{
+                adding.put(i,1);
+            }
+        }
+        return 0;*/
+    }
+
     public static void main(String [] args)    {
        // int singletest[]={2,2,3,6,6,5,5,7,7};
         //int firstMissingPositivetest[]={1};
