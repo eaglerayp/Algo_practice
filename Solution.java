@@ -466,7 +466,24 @@ public class Solution {
         }
         return 0;*/
     }
-
+    public boolean hasPath;
+    public boolean hasPathSum(TreeNode root, int sum) {
+        hasPath=false;
+        if(root!=null)Rec_hasPathSum(root,sum);
+        return hasPath;
+    }
+    public void Rec_hasPathSum(TreeNode root, int sum) {
+        if(root.left==null&&root.right==null&&root.val==sum){// if leaf, and add to leaf =sum
+            hasPath|=true;
+        }else{
+            if (root.left!=null){
+                Rec_hasPathSum(root.left,sum-root.val);
+            }
+            if(root.right!=null){
+                Rec_hasPathSum(root.right,sum-root.val);
+            }
+        }
+    }
     public static void main(String [] args)    {
        // int singletest[]={2,2,3,6,6,5,5,7,7};
         //int firstMissingPositivetest[]={1};
