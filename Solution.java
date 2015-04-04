@@ -484,13 +484,23 @@ public class Solution {
             }
         }
     }
+    public int removeDuplicates(int[] A) {
+        int count=0;
+        int prev=99999;
+        for(int a:A){
+            if(a!=prev){
+                A[count++]=a;
+                prev=a;
+            }
+        }
+        return count;
+    }
     public static void main(String [] args)    {
        // int singletest[]={2,2,3,6,6,5,5,7,7};
         //int firstMissingPositivetest[]={1};
-        int[] a={1,1,1,1};
+        int[] a={};
         System.out.println(Integer.MIN_VALUE);
         System.out.println(-Integer.MAX_VALUE);
-        System.out.println((2-1)/2);
        //rotate(a,1);
       // System.out.println(hammingWeight(11));
     }
