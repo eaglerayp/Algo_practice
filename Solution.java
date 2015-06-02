@@ -340,6 +340,14 @@ public class Solution {
             return dfs+root.val;
         }
     }
+    public boolean isBalanced(TreeNode root) {
+        if (root==null)return true;
+        int leftheight=maxDepth(root.left);
+        int rightheight=maxDepth(root.right);
+        boolean selfbalance=Math.abs(leftheight-rightheight)<2;
+        return selfbalance&&isBalanced(root.left)&&isBalanced(root.right);
+    }
+
      public int maxPathSum(TreeNode root) {
          DFSmaxPathSum(root);
          return max;
