@@ -503,6 +503,15 @@ public class Solution {
         }
         return count;
     }
+    public int removeElement(int[] nums, int val) {
+        int nowindex=-1;
+        for(int i=0;i<nums.length;i++){
+            if(nums[i]!=val){
+                nums[++nowindex]=nums[i];
+            }
+        }
+        return nowindex+1;
+    }
     public static void main(String [] args)    {
        // int singletest[]={2,2,3,6,6,5,5,7,7};
         //int firstMissingPositivetest[]={1};
