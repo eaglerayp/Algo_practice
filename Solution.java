@@ -240,7 +240,7 @@ public class Solution {
             return maxgap;
         }
     }
-     public class ListNode {
+     public static class ListNode {
          int val;
          ListNode next;
 
@@ -512,12 +512,51 @@ public class Solution {
         }
         return nowindex+1;
     }
+    public boolean isSameTree(TreeNode p, TreeNode q) {
+        if(p!=null&&q!=null){
+            if(p.val==q.val){
+                return isSameTree(p.left,q.left)&&isSameTree(p.right,q.right);
+            }else{
+                return false;
+            }
+        }else if(p==null&&q==null){
+            return true;
+        }else{
+            return false;
+        }
+    }
+    public ListNode removeNthFromEnd(ListNode head, int n) {
+        ListNode lastN=head;
+        ListNode lastNprev=head;
+        ListNode temp=head;
+        for(int i=1;i<n;i++){//first move point n-1 step
+            temp=temp.next;
+        }
+        while(temp.next!=null){
+            lastNprev=lastN;
+            lastN=lastN.next;
+            temp=temp.next;
+        }
+        if(lastN==head){
+            return lastN.next;
+        }
+        else{
+            lastNprev.next=lastN.next;
+            return head;
+        }
+    }
     public static void main(String [] args)    {
+        ListNode head=new ListNode(1);
+        ListNode a=head;
+        a.val=2;
+        a=null;
+        System.out.println(head.val);
+        System.out.println(head==null);
        // int singletest[]={2,2,3,6,6,5,5,7,7};
         //int firstMissingPositivetest[]={1};
-        int[] a={};
-        System.out.println(Integer.MIN_VALUE);
-        System.out.println(-Integer.MAX_VALUE);
+//        int[] a={};
+//        System.out.println(Integer.MIN_VALUE);
+//        System.out.println(-Integer.MAX_VALUE);
        //rotate(a,1);
       // System.out.println(hammingWeight(11));
     }

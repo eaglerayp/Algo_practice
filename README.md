@@ -43,7 +43,7 @@ testfunction contain my practicing project about DS and program efficiency
 ### leetcode oj solution
 * [Solution] (https://github.com/eaglerayp/testfunction/blob/master/Solution.java)
    including singleNumber,firstMissingPositive,Two Sum,	Number of 1 Bits,Reverse Bits,Rotate Array,maxPathSum,maximumGap,getIntersectionNode,isBalanced
-   removeElements
+   removeElements,Same Tree, Remove Nth Node From End of List
 * [LRUCache] (https://github.com/eaglerayp/testfunction/blob/master/LRUCache.java)
    LRUCache problem have 1.HashMap and double linked list  and 2. linkedHashMap  two solutions. 
    
