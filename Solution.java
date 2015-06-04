@@ -545,13 +545,31 @@ public class Solution {
             return head;
         }
     }
+    public static String convert(String s, int numRows) {
+        String []row=new String[numRows];
+        for(int i=0;i<numRows;i++){
+            row[i]="";
+        }
+        char[] chars = s.toCharArray();
+        int sindex=0;
+        while(sindex<chars.length){  //s not end
+            int index=0;
+            while(index<numRows&&sindex<chars.length){
+                row[index++]+=chars[sindex++];
+            }
+            index=index-2;
+            while(index>0&&sindex<chars.length){
+                row[index--]+=chars[sindex++];
+            }
+        }
+        String result="";
+        for(String line:row){
+            result+=line;
+        }
+        return result;
+    }
     public static void main(String [] args)    {
-        ListNode head=new ListNode(1);
-        ListNode a=head;
-        a.val=2;
-        a=null;
-        System.out.println(head.val);
-        System.out.println(head==null);
+        System.out.println(convert("PAYPALISHIRING", 3));
        // int singletest[]={2,2,3,6,6,5,5,7,7};
         //int firstMissingPositivetest[]={1};
 //        int[] a={};
