@@ -9,6 +9,7 @@ testfunction contain my practicing project about DS and program efficiency
 * [red-black tree(incomplete)] (https://github.com/eaglerayp/testfunction/blob/master/balancetree.java)
 * [binary compute] (https://github.com/eaglerayp/testfunction/blob/master/binary_compute.java)  include getMax(a,b) , sum if n>X , isEven
 
+
 ###classic problem
 * [plateau](https://github.com/eaglerayp/testfunction/blob/master/plateau.java)
 * [dominance count(GT)](https://github.com/eaglerayp/testfunction/blob/master/GT_count.java)
@@ -49,4 +50,5 @@ testfunction contain my practicing project about DS and program efficiency
    
    problem can be found in https://leetcode.com/problemset/algorithms/
 
-
+* [minstack] (https://github.com/eaglerayp/testfunction/blob/master/MinStack.java)
+   solve minstack by using two stack  based on the property of stack : 一旦pop到min value 前面的value已經pop玩了 所以只要記住後面還沒被Pop的min value即可
