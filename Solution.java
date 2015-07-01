@@ -578,8 +578,63 @@ public class Solution {
         }
         return root;
     }
+    public static class Point {
+            int x;
+            int y;
+            Point() { x = 0; y = 0; }
+            Point(int a, int b) { x = a; y = b; }
+     }
+    public static int maxPoints(Point[] points) {
+        if(points.length<3){
+            return points.length;
+        }
+        int max=0;
+        for(int a=0;a<points.length-2;a++){
+            boolean [] check=new boolean[points.length];
+            for(int b=0;b<points.length;b++){
+                check[b]=false;
+            }
+
+            for(int b=a+1;b<points.length;b++){
+                if(check[b])continue;
+                while(b<points.length&&samePoints(points[a],points[b])){
+                    b++;
+                }
+                int count = (b==points.length)?1:2;//means all points the same and count the same ,note that b is lastindex+1 ,
+                // others, one line have two points
+                //count same points with a
+                for(int c=a+1;c<b;c++){
+                    if(samePoints(points[a],points[c])){
+                        count++;
+                    }
+                }
+                for(int c=b+1;c<points.length;c++){
+                    if(inALine(points[a],points[b],points[c])){
+                        count++;
+                        check[c]=true;
+                    }
+                }
+                if(count>max){
+                    max=count;
+                }
+            }
+        }
+        return max;
+    }
+    public static boolean samePoints(Point a,Point b){
+        return(a.x==b.x&&a.y==b.y);
+    }
+    public static boolean inALine(Point a,Point b,Point c){
+        return ((a.y-b.y)*(a.x-c.x)==(a.y-c.y)*(a.x-b.x));
+    }
     public static void main(String [] args)    {
-        System.out.println(convert("PAYPALISHIRING", 3));
+        Point[] points=new Point[5];
+        for(int i=0;i<5;i++){
+            points[i]=new Point(1,1);
+        }
+        points[3]=new Point(2,1);
+        System.out.println( maxPoints(points));
+
        // int singletest[]={2,2,3,6,6,5,5,7,7};
         //int firstMissingPositivetest[]={1};
 //        int[] a={};
