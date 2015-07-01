@@ -627,14 +627,82 @@ public class Solution {
     public static boolean inALine(Point a,Point b,Point c){
         return ((a.y-b.y)*(a.x-c.x)==(a.y-c.y)*(a.x-b.x));
     }
+    public static String shortestPalindrome(String s) {
+        // O(n^2)
+       /* if(s.length()<2) return s;
+        String result=s;
+        int index=0;
+        while(!isPalindrome(result)){
+     //       System.out.println("index:"+index+"as:"+s.substring(s.length()-1-index));
+            result=reverseString(s.substring(s.length()-1-index))+s;
+      //      System.out.println(result);
+            index++;
+        }
+        return result;*/
+
+        //using KMP  ,  faster!! O(n)
+        String rev_s= new StringBuilder(s).reverse().toString();
+        String KMP_compare_String=s+","+rev_s;
+        // compare rev_s how long same with prefix of s , so we don't have to copy this part
+        int [] KMPtable=new int [KMP_compare_String.length()];// all zero
+        //KMP table
+        for(int i=1;i<KMPtable.length;i++){
+            int temp=KMPtable[i-1];
+            while(temp>0&&KMP_compare_String.charAt(i)!=KMP_compare_String.charAt(temp)){
+                temp=KMPtable[temp-1];
+            }
+            if(KMP_compare_String.charAt(i)==KMP_compare_String.charAt(temp)){
+                temp++;
+            }
+            KMPtable[i]=temp;
+        }
+        //copy without same prefix
+        return rev_s.substring(0, s.length() - KMPtable[KMP_compare_String.length() - 1]) + s;
+    }
+    public static String reverseString(String s){
+     /*   int len=s.length();
+        char [] reverse=new char[len];
+        for(int i=0;i<len;i++){
+            reverse[i]=s.charAt(len-1-i);
+        }
+        return new String(reverse);*/
+        return new StringBuffer(s).reverse().toString();
+    }
+    public static boolean isPalindrome(String s){
+        if(s.length()<2) return true;
+     /*   int halflen=s.length()/2;
+        String left=s.substring(0,halflen);
+        String right=s.substring(s.length()-halflen,s.length());*/
+        char [] schar=s.toCharArray();
+        int left=0;
+        int right=s.length()-1;
+        while(left<right){
+            if(schar[left]!=schar[right]){
+                return false;
+            }
+            left++;
+            right--;
+        }
+
+        return true;
+    }
     public static void main(String [] args)    {
-        Point[] points=new Point[5];
+        /*Point[] points=new Point[5];
         for(int i=0;i<5;i++){
             points[i]=new Point(1,1);
         }
-        points[3]=new Point(2,1);
-        System.out.println( maxPoints(points));
-
+        points[3]=new Point(2,1);*/
+        int [] a=new int[2];
+        String s="aacc";
+        int halflen=s.length()/2;
+        String left=s.substring(0,halflen);
+        String right=s.substring(s.length()-halflen,s.length());
+        System.out.println(left);
+        System.out.println(a[0]);
+        /*long task_start=System.currentTimeMillis();
+long task_end=System.currentTimeMillis();
+        System.out.println(task_start);
+        System.out.println(task_end);*/
        // int singletest[]={2,2,3,6,6,5,5,7,7};
         //int firstMissingPositivetest[]={1};
 //        int[] a={};
