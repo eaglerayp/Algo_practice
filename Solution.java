@@ -317,6 +317,69 @@ public class Solution {
             cur=next;
         }
     }*/
+    //iterative version
+     public ListNode reverseList(ListNode head){
+         ListNode prev=null;
+         if(head!=null) {
+             ListNode cur= head.next;
+             prev = head;
+             prev.next = null;
+             ListNode next;
+             while (cur != null) {
+                 next = cur.next;
+                 cur.next = prev;
+                 prev = cur;
+                 cur = next;
+             }
+         }
+         return prev;
+     }
+    //recursive version easy
+    /*public ListNode reverseList(ListNode head) {
+        return reverseList(head, null);
+    }
+
+    private ListNode reverseList(ListNode head, ListNode prev) {
+        if(head == null){
+            return prev;
+        }else{
+            ListNode next= head.next;
+            head.next = prev;
+            return reverseList(next, head);
+        }
+    }*/
+    //recursive version hard
+    /*public ListNode reverseList(ListNode head){
+        if(head==null) return head;
+        ListNode rest = head.next;
+        if(rest==null) return head;
+        rest = reverseList(rest);
+        head.next.next = head;    //  Here is the trick
+        head.next =null;          //
+        return rest;
+    }*/
+    public static int trailingZeroes(int n) {
+        int result=0;
+        while(n!=0){
+            result+=n/5;
+            n/=5;
+        }
+        return result;
+    }
+    /*
+    public int trailingZeroes(int n) {
+        if(n<5)
+            return 0;
+
+        int x =5;
+        int zero =0;
+        while(x <= n/5){   // prevent x overflow , let n /5 make sure x not overflow
+            zero += n/x;
+            x = x*5;
+        }
+        zero += n/x;
+        return zero;
+    }*/
      public class TreeNode {
           int val;
           TreeNode left;
@@ -697,7 +760,7 @@ public class Solution {
         int halflen=s.length()/2;
         String left=s.substring(0,halflen);
         String right=s.substring(s.length()-halflen,s.length());
-        System.out.println(left);
+        System.out.println(trailingZeroes(25));
         System.out.println(a[0]);
         /*long task_start=System.currentTimeMillis();
 long task_end=System.currentTimeMillis();
