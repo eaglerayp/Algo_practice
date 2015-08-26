@@ -749,6 +749,22 @@ public class Solution {
 
         return true;
     }
+    public int[] productExceptSelf(int[] nums) {
+        int length=nums.length;
+        int [] result=new int [length];
+        if(length<1) return result;
+        int ex_product=1;
+        for(int i=0;i<length;i++){
+            result[i]=ex_product;
+            ex_product*=nums[i];
+        }
+        int post_product=1;
+        for(int i=length-1;i>=0;i--){
+            result[i]*=post_product;
+            post_product*=nums[i];
+        }
+        return result;
+    }
     public static void main(String [] args)    {
         /*Point[] points=new Point[5];
         for(int i=0;i<5;i++){
