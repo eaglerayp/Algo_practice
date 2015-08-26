@@ -765,6 +765,17 @@ public class Solution {
         }
         return result;
     }
+    public static boolean isPowerOfTwo(int n) {
+      /* if(n<0)return false;
+       int bitone=n&0x01;
+        System.out.println(bitone);
+       while(n>0){
+           n>>>=1;
+           bitone+=n&0x01;
+       }
+       return bitone==1;*/
+        return n > 0 && (n&(n-1))==0;  //god like   , power of 2 -1  complement with power of 2
+    }
     public static void main(String [] args)    {
         /*Point[] points=new Point[5];
         for(int i=0;i<5;i++){
@@ -776,7 +787,7 @@ public class Solution {
         int halflen=s.length()/2;
         String left=s.substring(0,halflen);
         String right=s.substring(s.length()-halflen,s.length());
-        System.out.println(trailingZeroes(25));
+        System.out.println(isPowerOfTwo(25));
         System.out.println(a[0]);
         /*long task_start=System.currentTimeMillis();
 long task_end=System.currentTimeMillis();
