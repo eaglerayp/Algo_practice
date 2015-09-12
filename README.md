@@ -44,7 +44,8 @@ testfunction contain my practicing project about DS and program efficiency
 ### leetcode oj solution
 * [Solution] (https://github.com/eaglerayp/testfunction/blob/master/Solution.java)
    including singleNumber,firstMissingPositive,Two Sum,	Number of 1 Bits,Reverse Bits,Rotate Array,maxPathSum,maximumGap,getIntersectionNode,isBalanced
-   removeElements,Same Tree, Remove Nth Node From End of List, ZigZag Conversion , Invert binary tree , maxPoints  , shortestPalindrome (with KMP) , ispowerof2, productExceptSelf ,removeListNodewithoutroot
+   removeElements,Same Tree, Remove Nth Node From End of List, ZigZag Conversion , Invert binary tree , maxPoints  , shortestPalindrome (with KMP) , ispowerof2,
+   productExceptSelf ,removeListNodewithoutroot, addDigits
    Using Stack:BSTIterator
    reverseLinkedList: recursive version
 

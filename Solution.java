@@ -781,12 +781,26 @@ public class Solution {
         node.next=temp.next;
         node.val=temp.val;
     }
+    public static int addDigits(int num) {
+        int digitsum=99;
+        while(digitsum>9) {
+            digitsum=0;
+            while (num > 0) {
+                digitsum += (num % 10);
+                num /= 10;
+            }
+            num=digitsum;
+        }
+        return digitsum;
+    }
     public static void main(String [] args)    {
         /*Point[] points=new Point[5];
         for(int i=0;i<5;i++){
             points[i]=new Point(1,1);
         }
         points[3]=new Point(2,1);*/
+        System.out.println(addDigits(44));
+
         int [] a=new int[2];
         String s="aacc";
         int halflen=s.length()/2;
