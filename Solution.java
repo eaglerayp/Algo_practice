@@ -776,6 +776,11 @@ public class Solution {
        return bitone==1;*/
         return n > 0 && (n&(n-1))==0;  //god like   , power of 2 -1  complement with power of 2
     }
+    public void deleteNode(ListNode node) {
+        ListNode temp=node.next;
+        node.next=temp.next;
+        node.val=temp.val;
+    }
     public static void main(String [] args)    {
         /*Point[] points=new Point[5];
         for(int i=0;i<5;i++){
