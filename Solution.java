@@ -1,3 +1,5 @@
+
+
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Hashtable;
@@ -120,10 +122,12 @@ public class Solution {
         }
         return answer;*/
         int answer=0;
-        for(int i=0;i<32;i++){
+        /*for(int i=0;i<32;i++){
             answer+=((n&0x01)==1)?1:0;
             n>>>=1;
-        }
+        }*/
+        for (answer = 0; n != 0; n &= n - 1, answer++)
+            ;
         return answer;
     }
     public static int[] twoSum(int[] numbers, int target) {
@@ -818,6 +822,6 @@ long task_end=System.currentTimeMillis();
 //        System.out.println(Integer.MIN_VALUE);
 //        System.out.println(-Integer.MAX_VALUE);
        //rotate(a,1);
-      // System.out.println(hammingWeight(11));
+       System.out.println(hammingWeight(7));
     }
 }
