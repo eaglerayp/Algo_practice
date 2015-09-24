@@ -2,6 +2,7 @@
 
 import java.util.Arrays;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Hashtable;
 
 /**
@@ -816,7 +817,26 @@ public class Solution {
             }
         }
     }
-
+    public static boolean containsDuplicate(int[] nums) {
+        HashSet<Integer>exist=new HashSet<>();
+        for(int element:nums){
+            if(exist.contains(element)) return true;
+            exist.add(element);
+        }
+        return false;
+    }
+    public static boolean Test_containsDuplicate() {
+        boolean result=true;
+        int test1[]={0,0,0,3,12,0};
+        result&=true==containsDuplicate(test1);
+        int test2[]={0,1};
+        result&=false==containsDuplicate(test2);
+        int test3[]={};
+        result&=false==containsDuplicate(test3);
+        int test4[]={0,5,0,5};
+        result&=true==containsDuplicate(test4);
+        return result;
+    }
     public static void main(String [] args)    {
         /*Point[] points=new Point[5];
         for(int i=0;i<5;i++){
@@ -828,8 +848,8 @@ public class Solution {
         moveZeroes(singletest);
         for(int a:singletest)
             System.out.print(a+" ");
-        System.out.println();/*
-
+        System.out.println();*/
+        System.out.println(Test_containsDuplicate());
 
         /*for(long a:bitsofint(192L)){
             System.out.print(a);
