@@ -46,6 +46,8 @@ testfunction contain my practicing project about DS and program efficiency
    including singleNumber,firstMissingPositive,Two Sum,	Number of 1 Bits,Reverse Bits,Rotate Array,maxPathSum,maximumGap,getIntersectionNode,isBalanced
    removeElements,Same Tree, Remove Nth Node From End of List, ZigZag Conversion , Invert binary tree , maxPoints  , shortestPalindrome (with KMP) , ispowerof2,
    productExceptSelf ,removeListNodewithoutroot, addDigits, moveZeroes ,containsDuplicate
+
+
    Using Stack:BSTIterator
    reverseLinkedList: recursive version
 
@@ -56,5 +58,5 @@ testfunction contain my practicing project about DS and program efficiency
    
    problem can be found in https://leetcode.com/problemset/algorithms/
 
-* [minstack] (https://github.com/eaglerayp/testfunction/blob/master/MinStack.java)
+* [minstack] (https://github.com/eaglerayp/testfunction/blob/master/MinStack.java)  
    solve minstack by using two stack  based on the property of stack : 一旦pop到min value 前面的value已經pop玩了 所以只要記住後面還沒被Pop的min value即可
