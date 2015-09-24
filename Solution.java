@@ -823,11 +823,14 @@ public class Solution {
             points[i]=new Point(1,1);
         }
         points[3]=new Point(2,1);*/
+        /* test moveZeroes
         int singletest[]={0,0,0,3,12,0};
         moveZeroes(singletest);
         for(int a:singletest)
             System.out.print(a+" ");
-        System.out.println();
+        System.out.println();/*
+
+
         /*for(long a:bitsofint(192L)){
             System.out.print(a);
         }*/
@@ -846,10 +849,10 @@ long task_end=System.currentTimeMillis();
         System.out.println(task_end);*/
        // int singletest[]={2,2,3,6,6,5,5,7,7};
         //int firstMissingPositivetest[]={1};
-//        int[] a={};
-//        System.out.println(Integer.MIN_VALUE);
-//        System.out.println(-Integer.MAX_VALUE);
+
        //rotate(a,1);
-       System.out.println(hammingWeight(7));
+        /* test hammingWeight
+       System.out.println(hammingWeight(7));*/
+
     }
 }
