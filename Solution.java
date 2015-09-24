@@ -797,13 +797,41 @@ public class Solution {
         }
         return digitsum;
     }
+
+    public static void moveZeroes(int[] nums) {
+        int lastindex=nums.length-1;
+        int count=0;
+        for(int i=0;i<lastindex-count;i++){
+            /*System.out.print(i + ":");
+            for(int a:nums) {
+                System.out.print(a + " ");
+            }
+            System.out.println();*/
+            if(nums[i]==0){
+                for(int j=i;j<lastindex-count;j++){
+                    nums[j]=nums[j+1];
+                }
+                nums[lastindex-count++]=0;
+                i--;
+            }
+        }
+    }
+
     public static void main(String [] args)    {
         /*Point[] points=new Point[5];
         for(int i=0;i<5;i++){
             points[i]=new Point(1,1);
         }
         points[3]=new Point(2,1);*/
-        System.out.println(addDigits(44));
+        int singletest[]={0,0,0,3,12,0};
+        moveZeroes(singletest);
+        for(int a:singletest)
+            System.out.print(a+" ");
+        System.out.println();
+        /*for(long a:bitsofint(192L)){
+            System.out.print(a);
+        }*/
+        /*System.out.println(addDigits(44));
 
         int [] a=new int[2];
         String s="aacc";
@@ -811,7 +839,7 @@ public class Solution {
         String left=s.substring(0,halflen);
         String right=s.substring(s.length()-halflen,s.length());
         System.out.println(isPowerOfTwo(25));
-        System.out.println(a[0]);
+        System.out.println(a[0]);*/
         /*long task_start=System.currentTimeMillis();
 long task_end=System.currentTimeMillis();
         System.out.println(task_start);
