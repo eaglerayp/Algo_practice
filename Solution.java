@@ -837,6 +837,27 @@ public class Solution {
         result&=true==containsDuplicate(test4);
         return result;
     }
+    public static ListNode deleteDuplicates(ListNode head) {
+        ListNode cur=head;
+        while(cur!=null){
+            if(cur.next!=null&&cur.next.val==cur.val){
+                cur.next=cur.next.next;
+            }else {
+                cur = cur.next;
+            }
+        }
+        return head;
+    }
+    public static void Test_deleteDuplicates() {
+        ListNode a=new ListNode(5);
+        a.next=new ListNode(5);
+        a.next.next=new ListNode(5);
+        deleteDuplicates(a);
+        while(a!=null){
+            System.out.print(a.val);
+            a=a.next;
+        }
+    }
     public static void main(String [] args)    {
         /*Point[] points=new Point[5];
         for(int i=0;i<5;i++){
@@ -849,6 +870,7 @@ public class Solution {
         for(int a:singletest)
             System.out.print(a+" ");
         System.out.println();*/
+        Test_deleteDuplicates();
         System.out.println(Test_containsDuplicate());
 
         /*for(long a:bitsofint(192L)){
