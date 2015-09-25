@@ -1,9 +1,6 @@
 
 
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Hashtable;
+import java.util.*;
 
 /**
  * Created by Eagle on 2015/2/16.
@@ -858,6 +855,49 @@ public class Solution {
             a=a.next;
         }
     }
+    public static ListNode mergeTwoLists(ListNode l1, ListNode l2) {
+        if(l1==null)return l2;
+        if(l2==null)return l1;
+        ListNode head=(l1.val<l2.val)?l1:l2;
+        ListNode l1prev=null;
+        ListNode l2prev=null;
+        if(l1.val<l2.val){
+            while(l1!=null&&l1.val<l2.val){
+                l1prev=l1;
+                l1=l1.next;
+            }
+            if(l1==null){
+                //insert l1prev to l2
+                
+            }
+        }else{
+
+        }
+        return head;
+    }
+    public static void Test_mergeTwoLists() {
+        /*ListNode l1_head= new ListNode(5);
+        ListNode l2_head= new ListNode(1);
+        ListNode next =new ListNode(2);
+        l2_head.next=next;
+        next.next=new ListNode(3);
+        next.next.next=new ListNode(4);
+        next.next.next.next=new ListNode(7);
+        l1_head.next=new ListNode(6);
+        ListNode head=mergeTwoLists(l2_head,l1_head);
+        while (head!=null){
+            System.out.print(head.val+" ");
+            head=head.next;
+        }
+        System.out.println();*/
+        ListNode l3_head= new ListNode(5);
+        ListNode l4_head= new ListNode(1);
+        ListNode head=mergeTwoLists(l3_head,l4_head);
+        while (head!=null){
+            System.out.print(head.val+" ");
+            head=head.next;
+        }
+    }
     public static void main(String [] args)    {
         /*Point[] points=new Point[5];
         for(int i=0;i<5;i++){
@@ -870,7 +910,8 @@ public class Solution {
         for(int a:singletest)
             System.out.print(a+" ");
         System.out.println();*/
-        Test_deleteDuplicates();
+        Test_mergeTwoLists();
+        //Test_deleteDuplicates();
         System.out.println(Test_containsDuplicate());
 
         /*for(long a:bitsofint(192L)){
