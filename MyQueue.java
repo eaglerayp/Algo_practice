@@ -13,11 +13,7 @@ class MyQueue {
 
     // Removes the element from in front of queue.
     public void pop() {
-        if(popstack.empty()){
-            while(!pushstack.empty()){
-                popstack.push(pushstack.pop());
-            }
-        }
+        peek();
         popstack.pop();
     }
 
