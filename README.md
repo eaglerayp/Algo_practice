@@ -60,3 +60,9 @@ testfunction contain my practicing project about DS and program efficiency
 
 * [minstack] (https://github.com/eaglerayp/testfunction/blob/master/MinStack.java)
    solve minstack by using two stack  based on the property of stack : 一旦pop到min value 前面的value已經pop玩了 所以只要記住後面還沒被Pop的min value即可
+
+* [MyQueue] (https://github.com/eaglerayp/testfunction/blob/master/MyQueue.java)
+   solve MyQueue by using two stack  based on the property of stack : 利用一個popstack 和pushstack完成simulation of queue,
+   修改pop()要是popstack還沒東西就把pushstack全部pop-push到popstack,這樣popsatck就是queue的order了
+
+
