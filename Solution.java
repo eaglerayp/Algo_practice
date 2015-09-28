@@ -815,7 +815,7 @@ public class Solution {
         }
     }
     public static boolean containsDuplicate(int[] nums) {
-        HashSet<Integer>exist=new HashSet<>();
+        HashSet<Integer>exist=new HashSet<Integer>();
         for(int element:nums){
             if(exist.contains(element)) return true;
             exist.add(element);
@@ -858,20 +858,31 @@ public class Solution {
     public static ListNode mergeTwoLists(ListNode l1, ListNode l2) {
         if(l1==null)return l2;
         if(l2==null)return l1;
-        ListNode head=(l1.val<l2.val)?l1:l2;
+        ListNode head=(l1.val<=l2.val)?l1:l2;
         ListNode l1prev=null;
         ListNode l2prev=null;
-        if(l1.val<l2.val){
-            while(l1!=null&&l1.val<l2.val){
-                l1prev=l1;
-                l1=l1.next;
+        while(l1!=null&&l2!=null) {
+            if (l1.val <= l2.val) {
+                while (l1 != null && l1.val <= l2.val) {
+                    l1prev = l1;
+                    l1 = l1.next;
+                }
+                // insert l1prev -> l2
+                if(l2prev!=null)l2prev.next = l1prev;
+                if(l1prev!=null)l1prev.next = l2;
+                if(l1!=null)l1prev = null;// not l1 end case
+                if(l2prev!=null)l2prev = l1prev;
+            } else { //l2<l1 case
+                while (l2 != null && l1.val > l2.val) {
+                    l2prev = l2;
+                    l2 = l2.next;
+                }
+                // insert l2prev -> l1
+                if(l1prev!=null)l1prev.next = l2prev;
+                if(l2prev!=null)l2prev.next = l1;
+                if(l2!=null)l2prev = null;// not l1 end case
+                if(l1prev!=null)l1prev = l2prev;
             }
-            if(l1==null){
-                //insert l1prev to l2
-                
-            }
-        }else{
-
         }
         return head;
     }
@@ -890,7 +901,7 @@ public class Solution {
             head=head.next;
         }
         System.out.println();*/
-        ListNode l3_head= new ListNode(5);
+        ListNode l3_head= new ListNode(1);
         ListNode l4_head= new ListNode(1);
         ListNode head=mergeTwoLists(l3_head,l4_head);
         while (head!=null){
