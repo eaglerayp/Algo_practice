@@ -382,7 +382,7 @@ public class Solution {
         zero += n/x;
         return zero;
     }*/
-     public class TreeNode {
+     public static class TreeNode {
           int val;
           TreeNode left;
           TreeNode right;
@@ -577,7 +577,7 @@ public class Solution {
         }
         return nowindex+1;
     }
-    public boolean isSameTree(TreeNode p, TreeNode q) {
+    public static boolean isSameTree(TreeNode p, TreeNode q) {
         if(p!=null&&q!=null){
             if(p.val==q.val){
                 return isSameTree(p.left,q.left)&&isSameTree(p.right,q.right);
@@ -633,7 +633,7 @@ public class Solution {
         }
         return result;
     }
-    public TreeNode invertTree(TreeNode root) {
+    public static TreeNode invertTree(TreeNode root) {
         if(root!=null){
             TreeNode temp=root.left;
             root.left=root.right;
@@ -909,6 +909,38 @@ public class Solution {
             head=head.next;
         }
     }
+    public static boolean isSymmetric(TreeNode root) {
+        if(root==null)return true;
+        return Rec_isSymmetric(root.left,root.right);
+        /* use invert and same
+        TreeNode right= invertTree(root.right);
+        boolean result=isSameTree(left,right);
+        right= invertTree(root.right); //Reduction
+        return result;*/
+
+    }
+    public static boolean Rec_isSymmetric(TreeNode left,TreeNode right) {
+        if(left==null&&right==null)return true;
+        if(left==null||right==null)return false;
+        if(left.val!=right.val)return false;
+        return Rec_isSymmetric(left.left,right.right)&&Rec_isSymmetric(left.right,right.left);
+    }
+    public static boolean Test_isSymmetric() {
+        boolean result=true;
+        TreeNode root=new TreeNode(5);
+        root.left=new TreeNode(3);
+        root.right=new TreeNode(3);
+
+        result&=isSymmetric(root);
+        System.out.println(result);
+        root.right.right=new TreeNode(1);
+        result&=(isSymmetric(root)==false);
+        System.out.println(result);
+        root.left.left=new TreeNode(1);
+        result&=isSymmetric(root);
+        System.out.println(result);
+        return result;
+    }
     public static void main(String [] args)    {
         /*Point[] points=new Point[5];
         for(int i=0;i<5;i++){
@@ -921,9 +953,9 @@ public class Solution {
         for(int a:singletest)
             System.out.print(a+" ");
         System.out.println();*/
-        Test_mergeTwoLists();
+      //  Test_mergeTwoLists();
         //Test_deleteDuplicates();
-        System.out.println(Test_containsDuplicate());
+        System.out.println(Test_isSymmetric());
 
         /*for(long a:bitsofint(192L)){
             System.out.print(a);
