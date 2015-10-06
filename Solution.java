@@ -941,6 +941,99 @@ public class Solution {
         System.out.println(result);
         return result;
     }
+    public static int minHeight(TreeNode root) {//BFS use queue
+        if (root==null) return 0;
+        int height=1;
+        int index=1;
+        int next_index=(int)Math.pow(2,height);
+        Queue<TreeNode> BFS_queue=new ArrayDeque<TreeNode>();
+        BFS_queue.offer(root);
+        while(!BFS_queue.isEmpty()) {
+            root=BFS_queue.poll();
+            if (root.left == null && root.right == null)
+                return height;
+            if (root.left == null || root.right == null)
+                return height;
+            BFS_queue.offer(root.left);
+            BFS_queue.offer(root.right);
+            index++;
+            if (index == next_index)
+                height++;
+            next_index=(int)Math.pow(2,height);
+        }
+        return height;
+    }
+
+    public static boolean Test_minHeight() {
+        boolean result=true;
+//        System.out.println(minHeight(null));
+//        result&=(minHeight(null)==0);
+        System.out.println(result);
+        TreeNode root=new TreeNode(5);
+        root.left=new TreeNode(3);
+        root.right=new TreeNode(3);
+//        System.out.println(minHeight(root));
+//        result&=minHeight(root)==2;
+        System.out.println(result);
+        root.right.right=new TreeNode(1);
+//        result&=(minHeight(root)==2);
+        System.out.println(result);
+        root.left.left=new TreeNode(1);
+        result&=minHeight(root)==2;
+        System.out.println(result);
+        return result;
+    }
+    public static int minDepth(TreeNode root) {//BFS use queue
+        if (root==null) return 0;
+        int height=1;
+        int index=0;
+        int next_index=1;
+        int layernode=0;
+        ArrayList<TreeNode> BFS_queue=new ArrayList<TreeNode>();
+        BFS_queue.add(root);
+        while(!BFS_queue.isEmpty()) {
+            root=BFS_queue.get(0);
+            BFS_queue.remove(0);
+            if(root!=null) {
+                if (root.left == null && root.right == null) //leaf
+                    return height;
+                if(root.left!=null)layernode++;
+                if(root.right!=null)layernode++;
+                BFS_queue.add(root.left);
+                BFS_queue.add(root.right);
+                index++;
+            }
+
+            if (index == next_index) {
+                height++;
+                next_index+=layernode;
+                layernode=0;
+            }
+        }
+        return height;
+    }
+    public static boolean Test_minDepth() {
+        boolean result=true;
+//        System.out.println(minDepth(null));
+//        result&=(minDepth(null)==0);
+        System.out.println(result);
+        TreeNode root=new TreeNode(5);
+        root.left=new TreeNode(3);
+       // root.right=new TreeNode(3);
+//        System.out.println(minHeight(root));
+//        result&=minDepth(root)==2;
+        System.out.println(result);
+  //      root.right.right=new TreeNode(1);
+//        result&=(minDepth(root)==2);
+        System.out.println(result);
+        root.left.left=new TreeNode(1);
+//        result&=minDepth(root)==3;
+//        System.out.println(result);
+        root.left.left.left=new TreeNode(1);
+        result&=minDepth(root)==4;
+        System.out.println(result);
+        return result;
+    }
     public static void main(String [] args)    {
         /*Point[] points=new Point[5];
         for(int i=0;i<5;i++){
@@ -955,7 +1048,7 @@ public class Solution {
         System.out.println();*/
       //  Test_mergeTwoLists();
         //Test_deleteDuplicates();
-        System.out.println(Test_isSymmetric());
+        System.out.println(Test_minDepth());
 
         /*for(long a:bitsofint(192L)){
             System.out.print(a);

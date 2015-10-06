@@ -45,10 +45,11 @@ testfunction contain my practicing project about DS and program efficiency
 * [Solution] (https://github.com/eaglerayp/testfunction/blob/master/Solution.java)
    including singleNumber,firstMissingPositive,Two Sum,	Number of 1 Bits,Reverse Bits,Rotate Array,maxPathSum,maximumGap,getIntersectionNode,isBalanced
    removeElements,Same Tree, Remove Nth Node From End of List, ZigZag Conversion , Invert binary tree , maxPoints  , shortestPalindrome (with KMP) , ispowerof2,
-   productExceptSelf ,removeListNodewithoutroot, addDigits, moveZeroes ,containsDuplicate,deleteDuplicates  , mergeTwoLists, isSymmetric
+   productExceptSelf ,removeListNodewithoutroot, addDigits, moveZeroes ,containsDuplicate,deleteDuplicates  , mergeTwoLists, isSymmetric, minDepth (not minHeight)
 
 
    Using Stack:BSTIterator
+   Using Queue: BFS ( minDepth,minHeight)
    reverseLinkedList: recursive version
 
    trailingzeroes **highligh overflow problem**
