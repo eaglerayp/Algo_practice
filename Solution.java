@@ -1034,6 +1034,26 @@ public class Solution {
         System.out.println(result);
         return result;
     }
+    public int[] plusOne(int[] digits) {
+        int index=digits.length-1;
+        while(index>=0){
+            if(digits[index]!=9){
+                digits[index]+=1;
+                return digits;
+            }else{
+                digits[index--]=0;
+                if(index<0){
+                    int [] newdigits=new int [digits.length+1];
+                    newdigits[0]=1;
+                    for(int i=1;i<newdigits.length;i++){
+                        newdigits[i]=digits[i-1];
+                    }
+                    return newdigits;
+                }
+            }
+        }
+        return digits;
+    }
     public static void main(String [] args)    {
         /*Point[] points=new Point[5];
         for(int i=0;i<5;i++){
