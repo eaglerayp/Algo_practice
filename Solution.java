@@ -1055,25 +1055,29 @@ public class Solution {
         return digits;
     }
 
-    public boolean isPalindrome(int x) {
+    /*public boolean isPalindrome(int x) {
         if(x<0) return false;
 
-    }
-    public int reverse(int x) {
+    }*/
+    public static int reverse(int x) {
         int y=0;
+        int large=Integer.MAX_VALUE;
+        large/=10;
         boolean negative=false;
         if(x<0) {
             negative=true;
             x*=-1;
         }
         while(x>0){
+            //check overflow returns 0 when the reversed integer overflows.
+            if(y>large){ //overflow
+                return 0;
+            }
             y*=10;
             y+=(x%10);
             x/=10;
         }
         if(negative) y*=-1;
-
-        //check overflow returns 0 when the reversed integer overflows.
         return y;
     }
     public static void main(String [] args)    {
@@ -1090,8 +1094,9 @@ public class Solution {
         System.out.println();*/
       //  Test_mergeTwoLists();
         //Test_deleteDuplicates();
-        System.out.println(Test_minDepth());
-
+        System.out.println(reverse(1));
+        System.out.println(reverse(10));
+        System.out.println(reverse(1000303307));
         /*for(long a:bitsofint(192L)){
             System.out.print(a);
         }*/
