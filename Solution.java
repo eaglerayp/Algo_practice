@@ -1141,6 +1141,21 @@ public class Solution {
         }
         return ABCD+EFGH;*/
     }
+    public static int climbStairs(int n) {
+        if(n==1)return 1;
+        if(n==2)return 2;
+        int count=2;
+        int p1=1;
+        int answer=2;
+        int temp;
+        while(count<n){
+            temp=answer;
+            answer+=p1;
+            p1=temp;
+            count++;
+        }
+        return answer;
+    }
     public static void main(String [] args)    {
         /*Point[] points=new Point[5];
         for(int i=0;i<5;i++){
@@ -1155,6 +1170,7 @@ public class Solution {
         System.out.println();*/
       //  Test_mergeTwoLists();
         //Test_deleteDuplicates();
+        System.out.println(climbStairs(6));
         System.out.println(computeArea(-2, -2, 2, 2, 1, 1, 3, 3));
         System.out.println(computeArea(-2, -2, 2, 2, 1, -3, 3, 3));
         System.out.println(isPalindrome(11));
