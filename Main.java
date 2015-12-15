@@ -1,5 +1,6 @@
 import java.io.IOException;
 import java.util.HashMap;
+import java.util.Random;
 
 
 public class Main
@@ -7,6 +8,21 @@ public class Main
 
    public static void main(String [] args) throws IOException  //test find duplicate  try bubble sortu06
    {
+       String OTP="";
+       Random r=new Random(new java.util.Date().getTime());
+       for(int i=1;i<=6;i++){
+           int a = r.nextInt(35)+1;
+           if(a<9){
+               String b = Integer.toString(a);
+               OTP= OTP + b;
+           }
+           else  {
+               a=a+87;
+               String c = String.valueOf((char)a);
+               OTP = OTP+c;
+           }
+       }
+       System.out.println("OTP:"+OTP);
 	   int [] inputsortsame ={1,2,2,3,3,3,3,3,3,4,5,5,6};  //example input
 	   int [] inputnotsort={1,6,3,5,7,9,8};//
        int [] f= {1,3,5,7,9};

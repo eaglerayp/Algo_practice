@@ -1094,6 +1094,53 @@ public class Solution {
         if(negative) y*=-1;
         return y;
     }
+    public static int computeArea(int A, int B, int C, int D, int E, int F, int G, int H) {
+        // don't check overlap
+        int left = Math.max(A,E), right = Math.max(Math.min(C, G), left);
+        int bottom = Math.max(B, F), top = Math.max(Math.min(D, H), bottom);
+        return (C-A)*(D-B) - (right-left)*(top-bottom) + (G-E)*(H-F);
+        // check overlap
+        /*int x[]={A,C,E,G};
+        int y[]={B,D,F,H};
+        int ABCD=(C-A)*(D-B);
+        int EFGH=(G-E)*(H-F);
+        boolean xoverlap=true;
+        boolean yoverlap=true;
+        if((E>C)||(A>G))xoverlap=false;
+        if((B>H)||(F>D))yoverlap=false;
+
+        if(xoverlap&&yoverlap){ //check overlap condition
+
+            for (int i=1;i<4;i++){
+                if(x[0]>x[i]){//swap
+                    int temp=x[0];
+                    x[0]=x[i];
+                    x[i]=temp;
+                }
+                if(y[0]>y[i]){//swap
+                    int temp=y[0];
+                    y[0]=y[i];
+                    y[i]=temp;
+                }
+            }
+            for (int i=1;i<3;i++){
+                if(x[3]<x[i]){//swap
+                    int temp=x[3];
+                    x[3]=x[i];
+                    x[i]=temp;
+                }
+                if(y[3]<y[i]){//swap
+                    int temp=y[3];
+                    y[3]=y[i];
+                    y[i]=temp;
+                }
+            }
+            int length=Math.abs(x[1]-x[2]);
+            int high=Math.abs(y[1]-y[2]);
+            return ABCD+EFGH-length*high;
+        }
+        return ABCD+EFGH;*/
+    }
     public static void main(String [] args)    {
         /*Point[] points=new Point[5];
         for(int i=0;i<5;i++){
@@ -1108,6 +1155,8 @@ public class Solution {
         System.out.println();*/
       //  Test_mergeTwoLists();
         //Test_deleteDuplicates();
+        System.out.println(computeArea(-2, -2, 2, 2, 1, 1, 3, 3));
+        System.out.println(computeArea(-2, -2, 2, 2, 1, -3, 3, 3));
         System.out.println(isPalindrome(11));
         System.out.println(isPalindrome(101));
         System.out.println(isPalindrome(1000303307));
