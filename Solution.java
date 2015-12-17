@@ -1156,6 +1156,24 @@ public class Solution {
         }
         return answer;
     }
+    public static String addBinary(String a, String b) {
+        int more1=0;
+        int maxlen;
+        String answer;
+        if(a.length()>b.length()){
+            maxlen=a.length();
+            answer=a;
+        }else{
+            maxlen=b.length();
+            answer=b;
+        }
+        int index=0;
+
+        while(index<maxlen&&more1==0){
+
+        }
+        return answer;
+    }
     public static void main(String [] args)    {
         /*Point[] points=new Point[5];
         for(int i=0;i<5;i++){
@@ -1168,8 +1186,10 @@ public class Solution {
         for(int a:singletest)
             System.out.print(a+" ");
         System.out.println();*/
-      //  Test_mergeTwoLists();
+        //  Test_mergeTwoLists();
         //Test_deleteDuplicates();
+        System.out.println(addBinary("10100000100100110110010000010101111011011001101110111111111101000000101111001110001111100001101",
+                "110101001011101110001111100110001010100001101011101010000011011011001011101111001100000011011110011"));
         System.out.println(climbStairs(6));
         System.out.println(computeArea(-2, -2, 2, 2, 1, 1, 3, 3));
         System.out.println(computeArea(-2, -2, 2, 2, 1, -3, 3, 3));
