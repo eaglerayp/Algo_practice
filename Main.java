@@ -8,6 +8,7 @@ public class Main
 
    public static void main(String [] args) throws IOException  //test find duplicate  try bubble sortu06
    {
+
        String OTP="";
        Random r=new Random(new java.util.Date().getTime());
        for(int i=1;i<=6;i++){

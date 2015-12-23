@@ -1159,20 +1159,71 @@ public class Solution {
     public static String addBinary(String a, String b) {
         int more1=0;
         int maxlen;
-        String answer;
+        int smalllen;
+        StringBuilder answer=new StringBuilder();
+        String longer;
         if(a.length()>b.length()){
             maxlen=a.length();
-            answer=a;
+            longer=a;
+            smalllen=b.length();
         }else{
             maxlen=b.length();
-            answer=b;
+            smalllen=a.length();
+            longer=b;
         }
-        int index=0;
+        int index=1;
 
-        while(index<maxlen&&more1==0){
-
+        while(index<=maxlen||more1>0){
+            if(index>smalllen){
+                if(more1>0){
+                    if(index>maxlen){ //end
+                        answer.append('1');
+                        more1--;
+                    }else{
+                        char c=longer.charAt(longer.length()-index);
+                        if(c=='1'){
+                            answer.append('0');
+                        }else{
+                            answer.append('1');
+                            more1--;
+                        }
+                    }
+                }else{
+                    char c=longer.charAt(longer.length()-index);
+                    if(c=='1'){
+                        answer.append('1');
+                    }else{
+                        answer.append('0');
+                    }
+                }
+            }else {
+                char ac = a.charAt(a.length() - index);
+                char bc = b.charAt(b.length() - index);
+                if (ac == '1' && bc == '1') { //more1
+                    if (more1 > 0) {
+                        answer.append('1');
+                    } else {
+                        answer.append('0');
+                        more1++;
+                    }
+                } else if (ac == '0' && bc == '0') {
+                    if (more1 > 0) {
+                        answer.append('1');
+                        more1--;
+                    } else {
+                        answer.append('0');
+                    }
+                } else { //an=1
+                    if (more1 > 0) {
+                        answer.append('0');
+                    } else {
+                        answer.append('1');
+                    }
+                }
+            }
+            index++;
         }
-        return answer;
+        return answer.reverse().toString();
     }
     public static void main(String [] args)    {
         /*Point[] points=new Point[5];
@@ -1188,6 +1239,8 @@ public class Solution {
         System.out.println();*/
         //  Test_mergeTwoLists();
         //Test_deleteDuplicates();
+        System.out.println(addBinary("111",
+                "11"));
         System.out.println(addBinary("10100000100100110110010000010101111011011001101110111111111101000000101111001110001111100001101",
                 "110101001011101110001111100110001010100001101011101010000011011011001011101111001100000011011110011"));
         System.out.println(climbStairs(6));
