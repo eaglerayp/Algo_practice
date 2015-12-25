@@ -1225,7 +1225,32 @@ public class Solution {
         }
         return answer.reverse().toString();
     }
+    public static List<List<Integer>> levelOrder(TreeNode root) {
+        List<List<Integer>> answer=new ArrayList<>();
+        traverse_levelOrder(0,answer,root);
+        return answer;
+    }
+    private static void traverse_levelOrder(int height,List<List<Integer>> answer,TreeNode node){
+        if(node!=null) {
+            if (answer.size() <= height) { //size<=height, add new list
+                List<Integer> neworder = new ArrayList<>();
+                neworder.add(node.val);
+                answer.add(neworder);
+            } else {//get order list and add
+                List<Integer> orderlist = answer.get(height);
+                orderlist.add(node.val);
+            }
+            traverse_levelOrder(height+1,answer,node.left);
+            traverse_levelOrder(height+1,answer,node.right);
+        }
+    }
     public static void main(String [] args)    {
+        TreeNode root =new TreeNode(1);
+        root.left=new TreeNode(2);
+        root.right=new TreeNode(2);
+        root.left.left=new TreeNode(4);
+        List<List<Integer>> ab=levelOrder(root);
+        System.out.println("A");
         /*Point[] points=new Point[5];
         for(int i=0;i<5;i++){
             points[i]=new Point(1,1);

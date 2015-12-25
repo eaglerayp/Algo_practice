@@ -1,14 +1,28 @@
 import java.io.IOException;
-import java.util.HashMap;
-import java.util.Random;
+import java.util.*;
 
 
 public class Main
 {
-
+    static <K,V extends Comparable<? super V>>
+    SortedSet<Map.Entry<K,V>> entriesSortedByValues(Map<K,V> map) {
+        SortedSet<Map.Entry<K,V>> sortedEntries = new TreeSet<Map.Entry<K,V>>(
+                new Comparator<Map.Entry<K,V>>() {
+                    @Override public int compare(Map.Entry<K,V> e1, Map.Entry<K,V> e2) {
+                        int res = e2.getValue().compareTo(e1.getValue());
+                        return res != 0 ? res : 1;
+                    }
+                }
+        );
+        sortedEntries.addAll(map.entrySet());
+        return sortedEntries;
+    }
    public static void main(String [] args) throws IOException  //test find duplicate  try bubble sortu06
    {
-
+       List<Integer> ab =new ArrayList<>();
+       ab.add(0,2);
+       ab.add(1,4);
+       System.out.println(ab.size());
        String OTP="";
        Random r=new Random(new java.util.Date().getTime());
        for(int i=1;i<=6;i++){
